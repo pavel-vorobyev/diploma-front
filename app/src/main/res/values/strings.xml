@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Gate locker</string>
+
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="unable_to_sign_in">Unable to sign in. Try again!</string>
+    <string name="unable_to_load_visits">Unable to load visits</string>
+    <string name="no_visits_found">No visits found</string>
+
+    <string name="visits">Visits</string>
+    <string name="scan">Scan</string>
+    <string name="profile">Profile</string>
+
+    <string name="id">ID</string>
+    <string name="name">Name</string>
+    <string name="logout">Log out</string>
+
+    <string name="allowed">Allowed</string>
+    <string name="not_allowed">Not allowed</string>
+</resources>
