@@ -5,10 +5,10 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
 import com.pavelvorobyev.diploma.R
-import com.pavelvorobyev.diploma.extensions.disable
-import com.pavelvorobyev.diploma.extensions.enable
-import com.pavelvorobyev.diploma.extensions.gone
-import com.pavelvorobyev.diploma.extensions.visible
+import com.pavelvorobyev.diploma.util.extensions.disable
+import com.pavelvorobyev.diploma.util.extensions.enable
+import com.pavelvorobyev.diploma.util.extensions.gone
+import com.pavelvorobyev.diploma.util.extensions.visible
 import com.pavelvorobyev.diploma.view.main.MainActivity
 import kotlinx.android.synthetic.main.activity_signin.*
 

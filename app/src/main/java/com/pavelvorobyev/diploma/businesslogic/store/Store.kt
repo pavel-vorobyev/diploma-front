@@ -1,7 +1,7 @@
 package com.pavelvorobyev.diploma.businesslogic.store
 
 import android.content.Context
-import com.pavelvorobyev.diploma.extensions.Empty
+import com.pavelvorobyev.diploma.util.extensions.Empty
 
 class Store(context: Context) {
 

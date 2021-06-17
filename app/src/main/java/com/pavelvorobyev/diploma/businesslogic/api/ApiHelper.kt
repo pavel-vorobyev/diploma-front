@@ -3,6 +3,7 @@ package com.pavelvorobyev.diploma.businesslogic.api
 import android.content.Context
 import com.pavelvorobyev.diploma.businesslogic.api.interceptos.AuthorizationInterceptor
 import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
+import java.util.concurrent.TimeUnit
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,6 +16,10 @@ class ApiHelper(private val context: Context) {
         val logging = HttpLoggingInterceptor()
         logging.setLevel(HttpLoggingInterceptor.Level.BODY)
         return OkHttpClient.Builder()
+            .connectTimeout(10, TimeUnit.SECONDS)
+            .callTimeout(1, TimeUnit.MINUTES)
+            .writeTimeout(1, TimeUnit.MINUTES)
+            .readTimeout(1, TimeUnit.MINUTES)
             .addInterceptor(AuthorizationInterceptor(context))
             .addInterceptor(logging)
             .build()

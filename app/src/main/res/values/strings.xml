@@ -18,4 +18,6 @@
 
     <string name="allowed">Allowed</string>
     <string name="not_allowed">Not allowed</string>
+    <string name="license_unknown">License unknown</string>
+    <string name="processing">Processing</string>
 </resources>

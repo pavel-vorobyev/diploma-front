@@ -3,12 +3,13 @@
     <color name="color_primary">#72D5FF</color>
     <color name="color_success">#16CF76</color>
     <color name="color_warning">#FFE56E</color>
-    <color name="color_danger">#FF8092</color>
+    <color name="color_danger">#EA4B5D</color>
     <color name="color_outline">#f8f9fb</color>
     <color name="color_white">#FFFFFF</color>
 
     <color name="color_bg_primary">#F0F2F4</color>
     <color name="color_bg_secondary">#FFFFFF</color>
+    <color name="color_bg_overlay">#4D000000</color>
 
     <color name="color_text_primary">#000000</color>
     <color name="color_text_secondary">#96969b</color>

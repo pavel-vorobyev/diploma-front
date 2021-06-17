@@ -3,11 +3,15 @@ package com.pavelvorobyev.diploma.view.visits.adapters
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.pavelvorobyev.diploma.R
 import com.pavelvorobyev.diploma.businesslogic.models.Visit
+import com.pavelvorobyev.diploma.util.DateUtils
+import com.pavelvorobyev.diploma.util.extensions.gone
+import kotlinx.android.synthetic.main.view_item_visit.view.badgeView
 import kotlinx.android.synthetic.main.view_item_visit.view.dateView
 import kotlinx.android.synthetic.main.view_item_visit.view.licenseView
 import kotlinx.android.synthetic.main.view_item_visit.view.photoView
@@ -35,11 +39,34 @@ class VisitsAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val item = items[position]
 
         if (item is Item.Data && holder is DataViewHolder) {
-            holder.itemView.licenseView.text = item.data.visitor?.license.orEmpty()
-            holder.itemView.dateView.text = item.data.date.orEmpty()
+            holder.itemView.let {
+                it.dateView.text = DateUtils.formatVisitDate(item.data.date.orEmpty())
+                it.photoView.load("http://192.168.0.102:9173/${item.data.scanFile}") {
+                    transformations(RoundedCornersTransformation(18f))
+                }
 
-            holder.itemView.photoView.load("http://192.168.0.102:9173/${item.data.scanFile}") {
-                transformations(RoundedCornersTransformation(18f))
+                when (item.data.isAllowed) {
+                    true -> {
+                        it.licenseView.text = item.data.visitor?.license.orEmpty()
+                        it.licenseView.setTextColor(it.context.getColor(R.color.color_text_primary))
+                        it.badgeView.background =
+                            AppCompatResources.getDrawable(
+                                holder.itemView.context,
+                                R.drawable.bg_badge_green
+                            )
+                        it.badgeView.text = holder.itemView.context.getString(R.string.allowed)
+                    }
+                    false -> {
+                        it.licenseView.text = it.context.getString(R.string.license_unknown)
+                        it.licenseView.setTextColor(it.context.getColor(R.color.color_danger))
+                        it.badgeView.background =
+                            AppCompatResources.getDrawable(it.context, R.drawable.bg_badge_red)
+                        it.badgeView.text = it.context.getString(R.string.not_allowed)
+                    }
+                    else -> {
+                        holder.itemView.badgeView.gone()
+                    }
+                }
             }
         }
     }

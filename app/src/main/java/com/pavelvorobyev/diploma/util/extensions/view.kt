@@ -1,4 +1,4 @@
-package com.pavelvorobyev.diploma.extensions
+package com.pavelvorobyev.diploma.util.extensions
 
 import android.view.View
 

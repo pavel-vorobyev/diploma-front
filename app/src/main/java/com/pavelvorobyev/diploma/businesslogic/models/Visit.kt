@@ -13,6 +13,8 @@ data class Visit(
     @SerializedName("date")
     val date: String?,
     @SerializedName("scan_file")
-    val scanFile: String
+    val scanFile: String,
+    @SerializedName("is_allowed")
+    val isAllowed: Boolean?
 
 )

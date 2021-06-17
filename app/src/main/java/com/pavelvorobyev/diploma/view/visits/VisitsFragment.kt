@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.pavelvorobyev.diploma.R
 import com.pavelvorobyev.diploma.businesslogic.models.Visit
-import com.pavelvorobyev.diploma.extensions.gone
-import com.pavelvorobyev.diploma.extensions.visible
+import com.pavelvorobyev.diploma.util.extensions.gone
+import com.pavelvorobyev.diploma.util.extensions.visible
 import com.pavelvorobyev.diploma.view.visits.adapters.VisitsAdapter
 import kotlinx.android.synthetic.main.fragment_visits.messageView
 import kotlinx.android.synthetic.main.fragment_visits.progressView
