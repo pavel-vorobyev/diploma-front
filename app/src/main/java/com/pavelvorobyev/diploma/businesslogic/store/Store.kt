@@ -28,7 +28,7 @@ class Store(context: Context) {
         editor.commit()
     }
 
-    fun logOut() {
+    fun clearAll() {
         editor.clear()
         editor.commit()
     }

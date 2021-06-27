@@ -15,7 +15,7 @@ class ProfilePresenterImpl(
     }
 
     override fun logOut() {
-        store.logOut()
+        store.clearAll()
         view.loggedOut()
     }
 }
