@@ -11,7 +11,7 @@ object DateUtils {
     private val iso8601DateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS")
     private const val visiDateFormat = "dd MMM HH:mm"
 
-    fun parseToIso8601(date: String): Date? {
+    private fun parseToIso8601(date: String): Date? {
         return iso8601DateFormat.parse(date)
     }
 
